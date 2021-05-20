@@ -1,4 +1,4 @@
-Solution #1:
+// Solution #1:
 let firstUniqChar = function(s) {
   let splitString = s.split("");
   let count = 0;
@@ -22,7 +22,7 @@ let firstUniqChar = function(s) {
 };
 
 
-Solution #2: 
+// Solution #2: 
 let firstUniqChar = function(string) {
   for (let i = 0; i < string.length; i++) {
     let char = string[i]
