@@ -1,2 +1,2 @@
 # TAA-Prep-2
-test
+Continued working on learning new methods. Learned .toString() to solve "FizzBuzz".
