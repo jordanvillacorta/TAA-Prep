@@ -1,34 +1,34 @@
 function sameVowelGroup(wordList) {
-	let resultVowelGroup = []
-	let vowelsInTheFirstWord = vowelFinder(wordList[0])
+	let sameVowelList = []
+	let vowelsInFirstWord = vowelFinder(wordList[0])
 	for (let i = 0; i < wordList.length; i++) {
-		let currentWordVowels = vowelFinder(wordList[i])
-		let count = 0
-		for (let j = 0; j < currentWordVowels.length; j++) {
-			if (vowelsInTheFirstWord.includes(currentWordVowels[j])) {
-				count++
+		let vowelsInCurrentWord = vowelFinder(wordList[i])
+		let vowelCount = 0
+		for (let j = 0; j < vowelsInCurrentWord.length; j++) {
+			if (vowelsInFirstWord.includes(vowelsInCurrentWord[j])) {
+				vowelCount++
 			}
-			if (count === currentWordVowels.length) {
-				resultVowelGroup.push(wordList[i])
+			if (vowelCount === vowelsInCurrentWord.length) {
+				sameVowelList.push(wordList[i])
 			}
 		}
 	}
-	return resultVowelGroup
+	return sameVowelList
 }
 
 function vowelFinder(word) {
 	let vowels = ['a', 'e', 'i', 'o', 'u']
-	let foundVowels = []
-	for (let l = 0; l < word.length; l++) {
-		if (vowels.includes(word[l])) {
-			foundVowels.push(word[l])
+	let vowelContainer = []
+	for (let v = 0; v < word.length; v++) {
+		if (vowels.includes(word[v])) {
+			vowelContainer.push(word[v])
 		}
 	}
 	
 	let uniqueVowels = []
-	for (let v = 0; v < foundVowels.length; v++) {
-		if (!uniqueVowels.includes(foundVowels[v])) {
-			uniqueVowels.push(foundVowels[v])
+	for (let x = 0; x < vowelContainer.length; x++) {
+		if (!uniqueVowels.includes(vowelContainer[x])) {
+			uniqueVowels.push(vowelContainer[x])
 		}
 	}
 	return uniqueVowels
