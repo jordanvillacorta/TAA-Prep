@@ -1,21 +1,18 @@
 function getStudentTopNotes(students) {
-  let result = []
-	if (students.length === 0) {
-		return result
-	}
+  let topNotes = []
 	for (let i = 0; i < students.length; i++) {
-    if (students[i].notes.length === 0) {
-      result.push(0)
-    } else {
-		let notes = students[i].notes
-    let max = notes[0]
-    for (let j = 1; j < notes.length; j++) {
-      if (notes[j] > max) {
-        max = notes[j]
-      } 
-    }
-    result.push(max)
+		if (students[i].notes.length === 0) {
+			topNotes.push(0)
+		} else {
+			let studentsNotes = students[i].notes
+			let biggestNumber = studentsNotes[0]
+			for (let j = 1; j < studentsNotes.length; j++) {
+				if (studentsNotes[j] > biggestNumber) {
+					biggestNumber = studentsNotes[j]
+				}
+			}
+			topNotes.push(biggestNumber)
 		}
-  }
-  return result
+	}
+	return topNotes
 }
