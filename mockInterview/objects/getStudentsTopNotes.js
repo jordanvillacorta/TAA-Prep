@@ -4,14 +4,14 @@ function getStudentTopNotes(students) {
 		if (students[i].notes.length === 0) {
 			topNotes.push(0)
 		} else {
-			let studentsNotes = students[i].notes
-			let biggestNumber = studentsNotes[0]
-			for (let j = 1; j < studentsNotes.length; j++) {
-				if (studentsNotes[j] > biggestNumber) {
-					biggestNumber = studentsNotes[j]
+			let studentNotes = students[i].notes
+			let biggestNote = studentNotes[0]
+			for (let j = 1; j < studentNotes.length; j++) {
+				if (studentNotes[j] > biggestNote) {
+					biggestNote = studentNotes[j]
 				}
 			}
-			topNotes.push(biggestNumber)
+			topNotes.push(biggestNote)
 		}
 	}
 	return topNotes
