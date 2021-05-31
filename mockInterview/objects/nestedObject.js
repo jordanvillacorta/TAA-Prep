@@ -1,29 +1,29 @@
 function getObject(listOfStudents) {
-	let newListOfStudents = []
-    // console.log(listOfStudents)
-    for (let id in listOfStudents) {
-			let currentStudent = listOfStudents[id]
-			newListOfStudents.push(currentStudent)
+	//console.log(listOfStudents)
+	let uniqueStudentMarksList = {};
+	for (const id in listOfStudents) {
+		let arrayOfStudentList = Object.entries(listOfStudents)
+		for (let i = 0; i < arrayOfStudentList.length; i++) {
+			let currentStudent = arrayOfStudentList[1]
+			console.log(currentStudent)
+			findIfStudentWithSameMarks(currentStudent, uniqueStudentMarksList)
 		}
-	let finalList = []
-	for (let i = 0; i < newListOfStudents.length; i++) {
-		if (newListOfStudents[i].marks === newListOfStudents[i + 1].marks) {
-			finalList.push(findWhichStudentHasHigherAge(newListOfStudents[i], newListOfStudents[i + 1]))
-		}
-		finalList.push(newListOfStudents[i])
 	}
-	return finalList
+	// return findIfStudentWithSameMarks(currentStudent, uniqueStudentMarksList)
 }
 
 function findIfStudentWithSameMarks(passedStudent, newStudentList) {
-    let higherAgeUniqueStudent = ''
-    
-    return higherAgeUniqueStudent
+	let higherAgeUniqueStudent = ''
+	//console.log(passedStudent.marks, newStudentList)
+	//if (parseInt(checkedStudent.marks) !== parseInt(passedStudent.marks)) {
+		//higherAgeUniqueStudent = findOlderStudent(passedStudent, checkedStudent)
+	//}
+	//return higherAgeUniqueStudent
 }
     
-function findWhichStudentHasHigherAge(student1, student2) {
-    if (student1.age >= student2.age) {
-        return student1
-    }
-    return student2
+function findOlderStudent(student1, student2) {
+	if (student1.age >= student2.age) {
+			return student1
+	}
+	return student2
 }
