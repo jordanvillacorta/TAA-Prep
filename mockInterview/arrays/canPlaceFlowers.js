@@ -1,12 +1,10 @@
 var canPlaceFlowers = function(flowerbed, n) {
-  let counter = 0
+  let emptyCounter = 0
   for (let i = 0; i < flowerbed.length; i++) {
-    if (flowerbed[i] === 0) {
-      counter++
+    if (!flowerbed[i-1] && !flowerbed[i] && !flowerbed[i+1]) {
+      flowerbed[i] = 1
+      emptyCounter++
     }
   }
-  if (counter % n === 0) {
-    return true
-  }
-  return false
+  return emptyCounter >= n
 };
