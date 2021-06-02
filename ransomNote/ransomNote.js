@@ -1,10 +1,10 @@
 var canConstruct = function(ransomNote, magazine) {
-  let cutOutMagazineLetters = magazine.split('')
+  let lettersFromMagazine = magazine.split('')
   for (let i = 0; i < ransomNote.length; i++) {
-    if (!cutOutMagazineLetters.includes(ransomNote[i])) {
-      return false
+    if (!lettersFromMagazine.includes(ransomNote[i])) {
+      return false 
     }
-  cutOutMagazineLetters.splice(cutOutMagazineLetters.indexOf(ransomNote[i]), 1, '')
+    lettersFromMagazine.splice(lettersFromMagazine.indexOf(ransomNote[i]), 1, '')
   }
   return true
 }
